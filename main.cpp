@@ -7,14 +7,58 @@
 #include <allegro5/allegro_image.h>
 
 
+void Draw1(int x, int y){
+    ALLEGRO_BITMAP *SmallBlueCircle = al_load_bitmap("Figures/Circle/Small_Blue_Circle.png");
+    ALLEGRO_BITMAP *MediumBlueCircle = al_load_bitmap("Figures/Circle/Medium_Blue_Circle.png");
+    ALLEGRO_BITMAP *BigBlueCircle = al_load_bitmap("Figures/Circle/Big_Blue_Circle.png");
+    ALLEGRO_BITMAP *SmallYellowCircle = al_load_bitmap("Figures/Circle/Small_Yellow_Circle.png");
+    ALLEGRO_BITMAP *MediumYellowCircle = al_load_bitmap("Figures/Circle/Medium_Yellow_Circle.png");
+    ALLEGRO_BITMAP *BigYellowCircle = al_load_bitmap("Figures/Circle/Big_Yellow_Circle.png");
+    ALLEGRO_BITMAP *SmallRedCircle = al_load_bitmap("Figures/Circle/Small_Red_Circle.png");
+    ALLEGRO_BITMAP *MediumRedCircle = al_load_bitmap("Figures/Circle/Medium_Red_Circle.png");
+    ALLEGRO_BITMAP *BigRedCircle = al_load_bitmap("Figures/Circle/Big_Red_Circle.png");
+    ALLEGRO_BITMAP *SmallGreenCircle = al_load_bitmap("Figures/Circle/Small_Green_Circle.png");
+    ALLEGRO_BITMAP *MediumGreenCircle = al_load_bitmap("Figures/Circle/Medium_Green_Circle.png");
+    ALLEGRO_BITMAP *BigGreenCircle = al_load_bitmap("Figures/Circle/Big_Green_Circle.png");
+
+    ALLEGRO_BITMAP *SmallBlueSquare = al_load_bitmap("Figures/Square/Small_Blue_Square.png");
+    ALLEGRO_BITMAP *MediumBlueSquare = al_load_bitmap("Figures/Square/Medium_Blue_Square.png");
+    ALLEGRO_BITMAP *BigBlueSquare = al_load_bitmap("Figures/Square/Big_Blue_Square.png");
+    ALLEGRO_BITMAP *SmallYellowSquare = al_load_bitmap("Figures/Square/Small_Yellow_Square.png");
+    ALLEGRO_BITMAP *MediumYellowSquare = al_load_bitmap("Figures/Square/Medium_Yellow_Square.png");
+    ALLEGRO_BITMAP *BigYellowSquare = al_load_bitmap("Figures/Square/Big_Yellow_Square.png");
+    ALLEGRO_BITMAP *SmallRedSquare = al_load_bitmap("Figures/Square/Small_Red_Square.png");
+    ALLEGRO_BITMAP *MediumRedSquare = al_load_bitmap("Figures/Square/Medium_Red_Square.png");
+    ALLEGRO_BITMAP *BigRedSquare = al_load_bitmap("Figures/Square/Big_Red_Square.png");
+    ALLEGRO_BITMAP *SmallGreenSquare = al_load_bitmap("Figures/Square/Small_Green_Square.png");
+    ALLEGRO_BITMAP *MediumGreenSquare = al_load_bitmap("Figures/Square/Medium_Green_Square.png");
+    ALLEGRO_BITMAP *BigGreenSquare = al_load_bitmap("Figures/Square/Big_Green_Square.png");
+
+    ALLEGRO_BITMAP *SmallBlueTriangle = al_load_bitmap("Figures/Triangle/Small_Blue_Triangle.png");
+    ALLEGRO_BITMAP *MediumBlueTriangle = al_load_bitmap("Figures/Triangle/Medium_Blue_Triangle.png");
+    ALLEGRO_BITMAP *BigBlueTriangle = al_load_bitmap("Figures/Triangle/Big_Blue_Triangle.png");
+    ALLEGRO_BITMAP *SmallYellowTriangle = al_load_bitmap("Figures/Triangle/Small_Yellow_Triangle.png");
+    ALLEGRO_BITMAP *MediumYellowTriangle = al_load_bitmap("Figures/Triangle/Medium_Yellow_Triangle.png");
+    ALLEGRO_BITMAP *BigYellowTriangle = al_load_bitmap("Figures/Triangle/Big_Yellow_Triangle.png");
+    ALLEGRO_BITMAP *SmallRedTriangle = al_load_bitmap("Figures/Triangle/Small_Red_Triangle.png");
+    ALLEGRO_BITMAP *MediumRedTriangle = al_load_bitmap("Figures/Triangle/Medium_Red_Triangle.png");
+    ALLEGRO_BITMAP *BigRedTriangle = al_load_bitmap("Figures/Triangle/Big_Red_Triangle.png");
+    ALLEGRO_BITMAP *SmallGreenTriangle = al_load_bitmap("Figures/Triangle/Small_Green_Triangle.png");
+    ALLEGRO_BITMAP *MediumGreenTriangle = al_load_bitmap("Figures/Triangle/Medium_Green_Triangle.png");
+    ALLEGRO_BITMAP *BigGreenTriangle = al_load_bitmap("Figures/Triangle/Big_Green_Triangle.png");
+
+    al_draw_bitmap(SmallBlueCircle,x,y,NULL);
+
+    al_flip_display();
+}
 
 using namespace std;
 
 
 int main() {
 
-    float ScreenWidth = 900;
-    float ScreenHeight = 700;
+    int ScreenWidth = 900;
+    int ScreenHeight = 700;
     int difficulty = 0;
 
     ALLEGRO_DISPLAY *display = NULL;
@@ -28,17 +72,14 @@ int main() {
     const char *Info4 = " Po poprawnym dobraniu czterech ciągów figur zostaniesz o tym poinformowany oraz wyświetlona zostanie reguła.";
     const char *Info5 = "POWODZENIA!";
 
-
-
 //Window init
     if (!al_init()) {
         return -1;
     }
+
     //Window properties
     display = al_create_display(ScreenWidth, ScreenHeight);
     al_set_window_title(display, "LogicKing");
-
-
 
     //add tools
     al_init_primitives_addon();
@@ -49,8 +90,7 @@ int main() {
 
     ALLEGRO_BITMAP *image = al_load_bitmap("/media/oogway/LINUX MINT/binar.jpg");
     ALLEGRO_FONT *font24 = al_load_ttf_font("/home/oogway/ClionProjects/LogicKing/ubuntu-font-family/Ubuntu-B.ttf", 24, 0);
-    ALLEGRO_FONT *font14 = al_load_ttf_font("/home/oogway/ClionProjects/LogicKing/ubuntu-font-family/Ubuntu-B.ttf", 14, 0);
-
+    ALLEGRO_FONT *font16 = al_load_ttf_font("/home/oogway/ClionProjects/LogicKing/ubuntu-font-family/Ubuntu-B.ttf", 16, 0);
 
     ALLEGRO_EVENT_QUEUE *event_queue = al_create_event_queue();
     al_draw_bitmap(image,-120,-150,ALLEGRO_ALIGN_CENTER);
@@ -63,7 +103,7 @@ int main() {
     al_register_event_source(event_queue, al_get_keyboard_event_source());
 
     bool done = false;
-    bool choice1= false;
+    bool choice1= true;
     bool choice2= false;
     bool choice3= false;
     bool choiceESC= false;
@@ -85,23 +125,25 @@ int main() {
                 choice1 = true;
                 done = true;
                 break;
+
                 case ALLEGRO_KEY_2:
                 al_flip_display();
                 al_clear_to_color(al_map_rgb(0,0,0));
                 al_draw_bitmap(image,-120,-150,ALLEGRO_ALIGN_CENTER);
                 al_flip_display();
-                al_draw_text(font14,al_map_rgb(227,219,0),ScreenWidth/2,200,ALLEGRO_ALIGN_CENTER,Info1);
-                al_draw_text(font14,al_map_rgb(227,219,0),ScreenWidth/2,220,ALLEGRO_ALIGN_CENTER,Info2);
-                al_draw_text(font14,al_map_rgb(227,219,0),ScreenWidth/2,240,ALLEGRO_ALIGN_CENTER,Info3);
-                al_draw_text(font14,al_map_rgb(227,219,0),ScreenWidth/2,260,ALLEGRO_ALIGN_CENTER,Info4);
-                al_draw_text(font14,al_map_rgb(227,219,0),ScreenWidth/2,280,ALLEGRO_ALIGN_CENTER,Info5);
+                al_draw_text(font16,al_map_rgb(227,255,0),ScreenWidth/2,300,ALLEGRO_ALIGN_CENTER,Info1);
+                al_draw_text(font16,al_map_rgb(227,255,0),ScreenWidth/2,320,ALLEGRO_ALIGN_CENTER,Info2);
+                al_draw_text(font16,al_map_rgb(227,255,0),ScreenWidth/2,340,ALLEGRO_ALIGN_CENTER,Info3);
+                al_draw_text(font16,al_map_rgb(227,255,0),ScreenWidth/2,360,ALLEGRO_ALIGN_CENTER,Info4);
+                al_draw_text(font16,al_map_rgb(227,255,0),ScreenWidth/2,380,ALLEGRO_ALIGN_CENTER,Info5);
                 al_flip_display();
                 choice2 = true;
-
                 continue;
+
             case ALLEGRO_KEY_3:
                 done = true;
                 break;
+
             case ALLEGRO_KEY_ESCAPE:
                 al_clear_to_color(al_map_rgb(0,0,0));
                 al_draw_bitmap(image,-120,-150,ALLEGRO_ALIGN_CENTER);
@@ -109,18 +151,21 @@ int main() {
                 al_draw_text(font24,al_map_rgb(227,219,0),400,350,NULL,Rules);
                 al_draw_text(font24,al_map_rgb(227,219,0),400,400,NULL,Exit);
                 al_flip_display();
+
+            default:break;
         }
 
         }
     while (choice1) {
         ALLEGRO_EVENT events;
-        al_clear_to_color(al_map_rgb(0, 0, 0));
+        //al_clear_to_color(al_map_rgb(0, 0, 0));
         al_flip_display();
         al_wait_for_event(event_queue, &events);
 
         switch(events.keyboard.keycode){
             case ALLEGRO_KEY_1:
                 difficulty = 1;
+                Draw1(1,1);
                 continue;
             case ALLEGRO_KEY_2:
                 difficulty = 2;
@@ -132,18 +177,17 @@ int main() {
                 difficulty = 4;
                 continue;
             case ALLEGRO_KEY_ESCAPE:
-                al_show_native_message_box(display,"Exit","Chcesz zamknąć grę?","",NULL,ALLEGRO_MESSAGEBOX_YES_NO);
-
+                int temp = al_show_native_message_box(display,"Exit","Chcesz zamknąć grę?","",NULL,ALLEGRO_MESSAGEBOX_YES_NO);
+                if (temp == 1)
+                {
+                    choice1 = 0;
+                    break;
+                }
+                else{
+                    continue;
+                }
         }
-
-
-        }
+    }
     return 0;
 }
-
-void Draw1(){
-    al_draw_circle(50,50,5,al_map_rgb(50,50,50),5);
-}
-
-
 
