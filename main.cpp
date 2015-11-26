@@ -101,7 +101,7 @@ void MediumSames(int loss, int y,int tura){
         al_draw_bitmap(figura.MediumYellowSquare,x1,y+tura * 40,0);
         al_draw_bitmap(figura.MediumYellowTriangle,x1,y+tura * 40,0);
     }
-}
+} 
 void BigSames(int loss, int y,int tura){
     int x1 = 100;
     int x2 = 200;
