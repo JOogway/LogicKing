@@ -140,9 +140,24 @@ static void MediumSameColors(int loss, int y,int tura){
             al_draw_bitmap(figura.BigGreenTriangle,x1,y+tura * 40,0);
         }
     }
-    static void SameFigures(int loss, int y, int tura)
+    static void SameFigures(int loss, int loss2, int y, int tura)
     {
-        
+        int x1 = 100;
+        int x2 = 200;
+        int x3 = 300;
+        LoadBitMaps figura;
+        if(loss == 1){
+          //  al_draw_bitmap(figura.)
+        }
+        else if(loss == 2){
+
+        }
+        else if(loss ==3){
+
+        }
+        else if(loss ==4){
+
+        }
     }
 
 
@@ -151,3 +166,23 @@ static void MediumSameColors(int loss, int y,int tura){
 
 
 #endif //LOGICKING_METODY_H
+
+
+/*
+ * int x1 = 100;
+        int x2 = 200;
+        int x3 = 300;
+        LoadBitMaps figura;
+        if(loss == 1){
+
+        }
+        else if(loss == 2){
+
+        }
+        else if(loss ==3){
+
+        }
+        else if(loss ==4){
+
+        }
+        */
