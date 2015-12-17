@@ -12,11 +12,12 @@ using namespace std;
 
 int main() {
     Metody m;
+
     int ScreenWidth = 900;
     int ScreenHeight = 700;
-    int difficulty = 0;
     int tura = 0;
     int tryb = 0;
+    int y = 20;
 
     ALLEGRO_DISPLAY *display = NULL;
 
@@ -32,7 +33,6 @@ int main() {
 
     //Window
     display = al_create_display(ScreenWidth, ScreenHeight);
-    al_set_window_position(display, 50, 50);
     al_set_window_title(display, "LogicKing");
 
     //setup
@@ -64,6 +64,8 @@ int main() {
     bool choiceESC = true;
     bool diff1 = true;
     bool diff2 = true;
+    bool diff3 = true;
+    bool diff4 = true;
 
     while (!done) {
         ALLEGRO_EVENT events;
@@ -132,14 +134,9 @@ int main() {
                     }
                 }
                 case ALLEGRO_KEY_BACKSPACE: {
-                    howTo = true;
-                    al_clear_to_color(al_map_rgb(0, 0, 0));
-                    al_draw_bitmap(image, -120, -150, ALLEGRO_ALIGN_CENTER);
-                    al_draw_text(font24, al_map_rgb(227, 219, 0), 400, 300, NULL, "Start");
-                    al_draw_text(font24, al_map_rgb(227, 219, 0), 400, 350, NULL, "Rules");
-                    al_draw_text(font24, al_map_rgb(227, 219, 0), 400, 400, NULL, "Exit");
-                    al_flip_display();
                     done = false;
+                    howTo = true;
+                    break;
                 }
             }
         }
@@ -173,7 +170,7 @@ int main() {
         al_clear_to_color(al_map_rgb(0, 0, 0));
         ALLEGRO_EVENT events;
         al_draw_text(font24, al_map_rgb(150, 105, 150), 380, 300, NULL, "Wybierz poziom");
-        al_draw_text(font16, al_map_rgb(150, 105, 150), 350, 350, ALLEGRO_ALIGN_CENTER,
+        al_draw_text(font16, al_map_rgb(150, 105, 150), 470, 350, ALLEGRO_ALIGN_CENTER,
                      "1.Łatwy  2.Średni  3.Trudny  4.Pro");
         al_flip_display();
         al_wait_for_event(event_queue, &events);
@@ -184,16 +181,16 @@ int main() {
                     wyborlvl = true;
                     break;
                 case ALLEGRO_KEY_2:
-                    difficulty = 2;
-                    wyborlvl = false;
+                    diff2 = false;
+                    wyborlvl = true;
                     break;
                 case ALLEGRO_KEY_3:
-                    difficulty = 3;
-                    wyborlvl = false;
+                   diff3 = false;
+                    wyborlvl = true;
                     break;
                 case ALLEGRO_KEY_4:
-                    difficulty = 4;
-                    wyborlvl = false;
+                    diff4 = false;
+                    wyborlvl = true;
                     break;
                 case ALLEGRO_KEY_ESCAPE: {
                     int temp2 = al_show_native_message_box(display, "Exit", "Chcesz zamknąć grę?", "", NULL,
@@ -215,32 +212,47 @@ int main() {
         ALLEGRO_EVENT events;
         al_flip_display();
         al_wait_for_event(event_queue, &events);
+        int losZadania = rand()%4;
+        if(losZadania == 0) {
+            for (int j = 0; j < 3; j++) {
+                tura = j;
+                m.SameSizeAndColors(tryb, y, tura);
+                al_rest(0.25);
+            }
+        }
+            else if(losZadania == 1){
+                for (int i = 0; i < 3; i++) {
+                    tura = i;
+                    m.SameSizeSquare(tryb, y, tura);
+                    al_rest(0.25);
+                }
+            }
 
+        }
 
-    }
-
-    while (difficulty == 2) {
+    while (!diff2) {
         al_clear_to_color(al_map_rgb(0, 0, 0));
         al_draw_text(font24, al_map_rgb(150, 105, 150), 380, 10, NULL, "Poziom 2");
         ALLEGRO_EVENT events;
         al_flip_display();
         al_wait_for_event(event_queue, &events);
     }
-    while (difficulty == 3) {
+
+    while (!diff3) {
         al_clear_to_color(al_map_rgb(0, 0, 0));
         al_draw_text(font24, al_map_rgb(150, 105, 150), 380, 10, NULL, "Poziom 3");
         ALLEGRO_EVENT events;
         al_flip_display();
         al_wait_for_event(event_queue, &events);
     }
-    while (difficulty == 4) {
+
+    while (!diff4) {
         al_clear_to_color(al_map_rgb(0, 0, 0));
         al_draw_text(font24, al_map_rgb(150, 105, 150), 380, 10, NULL, "Poziom 4");
         ALLEGRO_EVENT events;
         al_flip_display();
         al_wait_for_event(event_queue, &events);
     }
-
     return 0;
 }
 
