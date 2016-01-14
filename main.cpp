@@ -11,13 +11,15 @@
 using namespace std;
 
 int main() {
+    srand( time( NULL ) );
     Metody m;
 
     int ScreenWidth = 900;
     int ScreenHeight = 700;
     int tura = 0;
     int tryb = 0;
-    int y = 60;
+    bool first = 0;
+    int difficulty;
 
     ALLEGRO_DISPLAY *display = NULL;
 
@@ -117,7 +119,6 @@ int main() {
         al_draw_text(font16, al_map_rgb(227, 255, 0), ScreenWidth / 2, 380, ALLEGRO_ALIGN_CENTER, Info5);
         al_flip_display();
 
-
         ALLEGRO_EVENT events;
         al_wait_for_event(event_queue, &events);
         if (events.type == ALLEGRO_EVENT_KEY_DOWN) {
@@ -179,19 +180,23 @@ int main() {
             switch (events.keyboard.keycode) {
                 case ALLEGRO_KEY_1:
                     diff1 = false;
+                    difficulty=1;
                     wyborlvl = true;
                     break;
                 case ALLEGRO_KEY_2:
                     diff2 = false;
                     wyborlvl = true;
+                    difficulty=2;
                     break;
                 case ALLEGRO_KEY_3:
                    diff3 = false;
                     wyborlvl = true;
+                    difficulty=3;
                     break;
                 case ALLEGRO_KEY_4:
                     diff4 = false;
                     wyborlvl = true;
+                    difficulty=4;
                     break;
                 case ALLEGRO_KEY_ESCAPE: {
                     int temp2 = al_show_native_message_box(display, "Exit", "Chcesz zamknąć grę?", "", NULL,
@@ -212,14 +217,14 @@ int main() {
     while (!diff1) {
         al_draw_text(font24, al_map_rgb(150, 105, 150), 380, 10, NULL, "Poziom 1");
         ALLEGRO_EVENT events1;
+
         al_flip_display();
-        int losZadania = rand()%1;
-        if (losZadania == 0) {
-            for (int j = 0; j < 3; j++) {
-                tura = j;
-                m.SameSizeAndColors(tryb, y, tura);
-                al_rest(0.25);
-            }
+        if (first == 0) {
+        m.GetFirstThree(tryb, tura, difficulty);
+        al_rest(0.25);
+            first = 1;
+    }
+
             al_wait_for_event(event_queue, &events1);
             if (events1.type == ALLEGRO_EVENT_KEY_DOWN) {
                 switch (events1.keyboard.keycode) {
@@ -242,14 +247,8 @@ int main() {
                 diff1 =true;
                 break;
             }
-        }
-        else if (losZadania == 1) {
-            for (int i = 0; i < 3; i++) {
-                tura = i;
-                m.SameSizeSquare(tryb, y, tura);
-                al_rest(0.3);
-            }
-            al_rest(3);
+
+
             al_wait_for_event(event_queue, &events1);
 
             if (events1.type == ALLEGRO_EVENT_KEY_DOWN) {
@@ -297,6 +296,5 @@ int main() {
         }
         return 0;
     }
-}
 
 
