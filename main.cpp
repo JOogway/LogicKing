@@ -11,7 +11,7 @@
 using namespace std;
 
 int main() {
-    srand( time( NULL ) );
+    srand(time(NULL));
     Metody m;
 
     int ScreenWidth = 900;
@@ -19,7 +19,7 @@ int main() {
     int tura = 0;
     int tryb = 0;
     bool first = 0;
-    int difficulty;
+    int difficulty = 0;
 
     ALLEGRO_DISPLAY *display = NULL;
 
@@ -40,6 +40,8 @@ int main() {
     //setup
     al_init_primitives_addon();
     al_install_keyboard();
+    al_install_mouse();
+
     al_init_image_addon();
     al_init_font_addon();
     al_init_ttf_addon();
@@ -52,11 +54,15 @@ int main() {
     ALLEGRO_EVENT_QUEUE *event_queue = al_create_event_queue();
     al_draw_bitmap(image, -120, -150, ALLEGRO_ALIGN_CENTER);
     al_draw_text(font24, al_map_rgb(227, 219, 0), 400, 300, NULL, "1.Start");
-    al_draw_text(font24, al_map_rgb(227, 219, 0), 400, 350, NULL, "2.Rules");
-    al_draw_text(font24, al_map_rgb(227, 219, 0), 400, 400, NULL, "3.Exit");
+    al_draw_rectangle(380, 300, 500, 330, al_map_rgb(1, 200, 1), 2);
+    al_draw_text(font24, al_map_rgb(227, 219, 0), 400, 331, NULL, "2.Rules");
+    al_draw_rectangle(380, 330, 500, 360, al_map_rgb(1, 200, 1), 2);
+    al_draw_text(font24, al_map_rgb(227, 219, 0), 400, 362, NULL, "3.Exit");
+    al_draw_rectangle(380, 360, 500, 390, al_map_rgb(1, 200, 1), 2);
 
     al_flip_display();
     al_register_event_source(event_queue, al_get_keyboard_event_source());
+    al_register_event_source(event_queue,al_get_mouse_event_source());
 
     bool done = false;
     bool wybortryb = true;
@@ -64,10 +70,9 @@ int main() {
     bool howTo = true;
     bool choice3 = true;
     bool choiceESC = true;
-    bool diff1 = true;
-    bool diff2 = true;
-    bool diff3 = true;
-    bool diff4 = true;
+    bool game = false;
+    bool winWindow = false;
+
 
     while (!done) {
         ALLEGRO_EVENT events;
@@ -75,14 +80,14 @@ int main() {
         al_flip_display();
 
         al_wait_for_event(event_queue, &events);
-        if (events.type == ALLEGRO_EVENT_KEY_DOWN) {
+        if (events.type == ALLEGRO_EVENT_KEY_UP) {
             switch (events.keyboard.keycode) {
                 case ALLEGRO_KEY_1:
                     al_clear_to_color(al_map_rgb(0, 0, 0));
                     al_flip_display();
                     wybortryb = false;
                     done = true;
-                    continue;
+                    break;
                 case ALLEGRO_KEY_2:
                     howTo = false;
                     done = true;
@@ -103,10 +108,28 @@ int main() {
                         continue;
                     }
                 }
-
                 default:
                     break;
             }
+        } else if (events.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
+            if (events.mouse.x >= 380 && events.mouse.x < 500 && events.mouse.y >= 300 && events.mouse.y < 330)
+            {
+                al_clear_to_color(al_map_rgb(0, 0, 0));
+                al_flip_display();
+                wybortryb = false;
+                done;
+                break;
+            }
+            else if (events.mouse.x >= 380 && events.mouse.x < 500 && events.mouse.y >= 330 && events.mouse.y < 360)
+            {
+                howTo = false;
+                done;
+                break;
+            }else if (events.mouse.x >= 380 && events.mouse.x < 500 && events.mouse.y >= 360 && events.mouse.y < 390){
+                done;
+                break;
+            }
+
         }
     }
     while (!howTo) {
@@ -139,7 +162,8 @@ int main() {
                     howTo = true;
                     break;
                 }
-                default:break;
+                default:
+                    break;
             }
         }
     }
@@ -150,7 +174,7 @@ int main() {
         al_draw_text(font16, al_map_rgb(150, 105, 150), 455, 350, ALLEGRO_ALIGN_CENTER, "1.Graficzny  2.Tekstowy");
         al_flip_display();
         al_wait_for_event(event_queue, &events);
-        if (events.type == ALLEGRO_EVENT_KEY_DOWN) {
+        if (events.type == ALLEGRO_EVENT_KEY_UP) {
             switch (events.keyboard.keycode) {
                 case ALLEGRO_KEY_1:
                     tryb = 0;
@@ -176,27 +200,27 @@ int main() {
                      "1.Łatwy  2.Średni  3.Trudny  4.Pro");
         al_flip_display();
         al_wait_for_event(event_queue, &events);
-        if (events.type == ALLEGRO_EVENT_KEY_DOWN) {
+        if (events.type == ALLEGRO_EVENT_KEY_UP) {
             switch (events.keyboard.keycode) {
                 case ALLEGRO_KEY_1:
-                    diff1 = false;
-                    difficulty=1;
+                    game = true;
+                    difficulty = 1;
                     wyborlvl = true;
                     break;
                 case ALLEGRO_KEY_2:
-                    diff2 = false;
+                    game = true;
+                    difficulty = 2;
                     wyborlvl = true;
-                    difficulty=2;
                     break;
                 case ALLEGRO_KEY_3:
-                   diff3 = false;
+                    game = true;
+                    difficulty = 3;
                     wyborlvl = true;
-                    difficulty=3;
                     break;
                 case ALLEGRO_KEY_4:
-                    diff4 = false;
+                    game = true;
+                    difficulty = 4;
                     wyborlvl = true;
-                    difficulty=4;
                     break;
                 case ALLEGRO_KEY_ESCAPE: {
                     int temp2 = al_show_native_message_box(display, "Exit", "Chcesz zamknąć grę?", "", NULL,
@@ -209,92 +233,61 @@ int main() {
 
                     }
                 }
-                default:break;
+                default:
+                    break;
             }
         }
     }
     al_clear_to_color(al_map_rgb(0, 0, 0));
-    while (!diff1) {
+
+
+    while (game) {
         al_draw_text(font24, al_map_rgb(150, 105, 150), 380, 10, NULL, "Poziom 1");
         ALLEGRO_EVENT events1;
-
+        if (tura == 6) {
+            winWindow;
+            !game;
+            break;
+        }
         al_flip_display();
         if (first == 0) {
-        m.GetFirstThree(tryb, tura, difficulty);
-        al_rest(0.25);
+            m.GetFirstThree(tryb, tura, difficulty);
+            al_rest(0.25);
             first = 1;
+        }
+
+        al_wait_for_event(event_queue, &events1);
+        if (events1.type == ALLEGRO_EVENT_KEY_UP) {
+            switch (events1.keyboard.keycode) {
+                case ALLEGRO_KEY_1:
+                    tura++;
+                    continue;
+                case ALLEGRO_KEY_2:
+                    tura++;
+                    continue;
+                case ALLEGRO_KEY_3:
+                    tura++;
+                    continue;
+                case ALLEGRO_KEY_4:
+                    tura++;
+                    continue;
+                default:
+                    break;
+            }
+        }
     }
 
-            al_wait_for_event(event_queue, &events1);
-            if (events1.type == ALLEGRO_EVENT_KEY_DOWN) {
-                switch (events1.keyboard.keycode) {
-                    case ALLEGRO_KEY_1:
-                        tura++;
-                        continue;
-                    case ALLEGRO_KEY_2:
-                        tura++;
-                        continue;
-                    case ALLEGRO_KEY_3:
-                        tura++;
-                        continue;
-                    case ALLEGRO_KEY_4:
-                        tura++;
-                        continue;
-                    default:break;
-                }
-            }
-            if(tura ==6){
-                diff1 =true;
-                break;
-            }
 
+    while (winWindow) {
+        al_clear_to_color(al_map_rgb(0, 0, 0));
+        al_draw_text(font24, al_map_rgb(150, 105, 150), 380, 10, NULL, "Poziom 2");
+        ALLEGRO_EVENT events2;
+        al_flip_display();
+        al_wait_for_event(event_queue, &events2);
 
-            al_wait_for_event(event_queue, &events1);
-
-            if (events1.type == ALLEGRO_EVENT_KEY_DOWN) {
-                switch (events1.keyboard.keycode) {
-                    case ALLEGRO_KEY_1:
-
-                        break;
-                    case ALLEGRO_KEY_2:
-
-                        break;
-                    case ALLEGRO_KEY_3:
-
-                        break;
-                    case ALLEGRO_KEY_4:
-
-                        break;
-                    default:break;
-                }
-            }
-        }
-
-
-        while (!diff2) {
-            al_clear_to_color(al_map_rgb(0, 0, 0));
-            al_draw_text(font24, al_map_rgb(150, 105, 150), 380, 10, NULL, "Poziom 2");
-            ALLEGRO_EVENT events2;
-            al_flip_display();
-            al_wait_for_event(event_queue, &events2);
-        }
-
-        while (!diff3) {
-            al_clear_to_color(al_map_rgb(0, 0, 0));
-            al_draw_text(font24, al_map_rgb(150, 105, 150), 380, 10, NULL, "Poziom 3");
-            ALLEGRO_EVENT events3;
-            al_flip_display();
-            al_wait_for_event(event_queue, &events3);
-        }
-
-        while (!diff4) {
-            al_clear_to_color(al_map_rgb(0, 0, 0));
-            al_draw_text(font24, al_map_rgb(150, 105, 150), 380, 10, NULL, "Poziom 4");
-            ALLEGRO_EVENT events;
-            al_flip_display();
-            al_wait_for_event(event_queue, &events);
-        }
-        return 0;
     }
+
+    return 0;
+}
 
 
