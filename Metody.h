@@ -17,12 +17,11 @@
 
 
 class Metody {
+    int y = 60;
+    int x = 100;
+
     int arr[36] = {111, 112, 113, 121, 122, 123, 131, 132, 133, 141, 142, 143, 211, 212, 213, 221, 222, 223, 231,
-                          232, 233, 241, 242, 243, 311, 312, 313, 321, 322, 323, 331, 332, 333, 341, 342, 343};
-    int SameSizeRed[3]={111,112,113}; //easy 3
-    int SameSizeBlue[3]={121,122,123}; //easy 3
-    int SameSizeYellow[3]={131,132,133}; //easy 3
-    int SameSizeGreen[3]={141,142,143}; //easy 3
+                   232, 233, 241, 242, 243, 311, 312, 313, 321, 322, 323, 331, 332, 333, 341, 342, 343};
 
     //Allofthem
     int SameColorRed[9] = {111, 112, 113, 211, 212, 213, 311, 312, 313};
@@ -42,87 +41,86 @@ class Metody {
     //easy 12
 
     int SameColorRedOrBlue[18] = {111, 112, 113, 211, 212, 213, 311, 312, 313, 121, 122, 123, 221, 222, 223, 321,
-                                         322, 323};
+                                  322, 323};
     //Medium 18
     int SameColorRedOrYellow[18] = {111, 112, 113, 211, 212, 213, 311, 312, 313, 131, 132, 133, 231, 232, 233,
-                                           331, 332, 333};
+                                    331, 332, 333};
     //Medium 18
     int SameColorRedOrGreen[18] = {111, 112, 113, 211, 212, 213, 311, 312, 313, 141, 142, 143, 241, 242, 243,
-                                          341, 342, 343};
+                                   341, 342, 343};
     //Medium 18
     int SameColorBlueOrYellow[18] = {121, 122, 123, 221, 222, 223, 321, 322, 323, 131, 132, 133, 231, 232, 233,
-                                            331, 332, 333};
+                                     331, 332, 333};
     //Medium 18
     int SameColorBlueOrGreen[18] = {121, 122, 123, 221, 222, 223, 321, 322, 323, 141, 142, 143, 241, 242, 243,
-                                           341, 342, 343};
+                                    341, 342, 343};
     //Medium 18
     int SameColorYellowOrGreen[18] = {131, 132, 133, 231, 232, 233, 331, 332, 333, 141, 142, 143, 241, 242, 243,
-                                             341, 342, 343};
+                                      341, 342, 343};
     //Medium 18
     int SameShapeCircleOrSquare[24] = {111, 121, 131, 141, 211, 221, 231, 241, 311, 321, 331, 341, 112, 122, 132,
-                                              142, 212, 222, 232, 242, 312, 322, 332, 342};
+                                       142, 212, 222, 232, 242, 312, 322, 332, 342};
     //medium 24
     int SameShapeCircleOrTriangle[24] = {111, 121, 131, 141, 211, 221, 231, 241, 311, 321, 331, 341, 113, 123,
-                                                133, 143, 213, 223, 233, 243, 313, 323, 333, 343};
+                                         133, 143, 213, 223, 233, 243, 313, 323, 333, 343};
     //medium 24
     int SameShapeSquareOrTriangle[24] = {112, 122, 132, 142, 212, 222, 232, 242, 312, 322, 332, 342, 113, 123,
-                                                133, 143, 213, 223, 233, 243, 313, 323, 333, 343};
+                                         133, 143, 213, 223, 233, 243, 313, 323, 333, 343};
     //medium 24
 
     int SameColorRedOrBlueOrYellow[27] = {111, 112, 113, 211, 212, 213, 311, 312, 313, 121, 122, 123, 221, 222,
-                                                 223, 321, 322, 323, 131, 132, 133, 231, 232, 233, 331, 332, 333};
+                                          223, 321, 322, 323, 131, 132, 133, 231, 232, 233, 331, 332, 333};
     //medium 27
     int SameColorRedOrBlueOrGreen[27] = {111, 112, 113, 211, 212, 213, 311, 312, 313, 121, 122, 123, 221, 222,
-                                                223, 321, 322, 323, 141, 142, 143, 241, 242, 243, 341, 342, 343};
+                                         223, 321, 322, 323, 141, 142, 143, 241, 242, 243, 341, 342, 343};
     //medium 27
     int SameColorRedOrYellowOrGreen[27] = {111, 112, 113, 211, 212, 213, 311, 312, 313, 131, 132, 133, 231, 232,
-                                                  233, 331, 332, 333, 141, 142, 143, 241, 242, 243, 341, 342, 343};
+                                           233, 331, 332, 333, 141, 142, 143, 241, 242, 243, 341, 342, 343};
     //medium 27
     int SameColorBlueOrYellowOrGreen[27] = {121, 122, 123, 221, 222, 223, 321, 322, 323, 131, 132, 133, 231, 232,
-                                                   233, 331, 332, 333, 141, 142, 143, 241, 242, 243, 341, 342, 343};
+                                            233, 331, 332, 333, 141, 142, 143, 241, 242, 243, 341, 342, 343};
     //medium 27
 
-    int SameColorRedOrBlueShapeCircleOrSquare[12]={111,112,121,122,211,212,221,222,311,312,321,322};
+    int SameColorRedOrBlueShapeCircleOrSquare[12] = {111, 112, 121, 122, 211, 212, 221, 222, 311, 312, 321, 322};
     //hard 12
-    int SameColorRedOrBlueShapeCircleOrTriangle[12]={111,113,121,123,211,213,221,223,311,313,321,323};
+    int SameColorRedOrBlueShapeCircleOrTriangle[12] = {111, 113, 121, 123, 211, 213, 221, 223, 311, 313, 321, 323};
     //hard 12
-    int SameColorRedOrBlueShapeSquareOrTriangle[12]={112,113,122,123,212,213,222,223,312,313,322,323};
+    int SameColorRedOrBlueShapeSquareOrTriangle[12] = {112, 113, 122, 123, 212, 213, 222, 223, 312, 313, 322, 323};
     //hard 12
-    int SameColorRedOrYellowShapeCircleOrSquare[12]={111,112,131,132,211,212,231,232,311,312,331,332};
+    int SameColorRedOrYellowShapeCircleOrSquare[12] = {111, 112, 131, 132, 211, 212, 231, 232, 311, 312, 331, 332};
     //hard 12
-    int SameColorRedOrYellowShapeCircleOrTriangle[12]={111,113,131,133,211,213,231,233,311,313,331,333};
+    int SameColorRedOrYellowShapeCircleOrTriangle[12] = {111, 113, 131, 133, 211, 213, 231, 233, 311, 313, 331, 333};
     //hard 12
-    int SameColorRedOrYellowShapeSquareOrTriangle[12]={112,113,132,133,212,213,232,233,312,313,332,333};
-    //hard 12
-
-    int SameColorRedOrGreenShapeCircleOrSquare[12]={111,112,141,142,211,212,241,242,311,313,341,342};
-    //hard 12
-    int SameColorRedOrGreenShapeCircleOrTriangle[12]={111,113,141,143,211,213,241,243,311,313,341,343};
-    //hard 12
-    int SameColorRedOrGreenShapeSquareOrTriangle[12]={112,113,142,143,212,213,242,243,312,313,342,343};
+    int SameColorRedOrYellowShapeSquareOrTriangle[12] = {112, 113, 132, 133, 212, 213, 232, 233, 312, 313, 332, 333};
     //hard 12
 
-    int SameColorBlueOrYellowShapeCircleOrSquare[12]={121,122,131,132,221,222,231,232,321,322,331,332};
+    int SameColorRedOrGreenShapeCircleOrSquare[12] = {111, 112, 141, 142, 211, 212, 241, 242, 311, 313, 341, 342};
     //hard 12
-    int SameColorBlueOrYellowShapeCircleOrTriangle[12]={121,123,131,133,221,223,231,233,321,323,331,333};
+    int SameColorRedOrGreenShapeCircleOrTriangle[12] = {111, 113, 141, 143, 211, 213, 241, 243, 311, 313, 341, 343};
     //hard 12
-    int SameColorBlueOrYellowShapeSquareOrTriangle[12]={122,123,132,133,222,223,232,233,322,323,332,333};
-    //hard 12
-
-    int SameColorBlueOrGreenShapeCircleOrSquare[12]={121,122,141,142,221,222,241,242,321,322,341,342};
-    //hard 12
-    int SameColorBlueOrGreenShapeCircleOrTriangle[12]={121,123,141,143,221,223,241,243,321,323,341,343};
-    //hard 12
-    int SameColorBlueOrGreenShapeSquareOrTriangle[12]={122,123,142,143,222,223,242,243,322,323,342,343};
+    int SameColorRedOrGreenShapeSquareOrTriangle[12] = {112, 113, 142, 143, 212, 213, 242, 243, 312, 313, 342, 343};
     //hard 12
 
-    int SameColorYellowOrGreenShapeCircleOrSquare[12]={131,132,141,142,231,232,241,242,331,332,341,342};
+    int SameColorBlueOrYellowShapeCircleOrSquare[12] = {121, 122, 131, 132, 221, 222, 231, 232, 321, 322, 331, 332};
     //hard 12
-    int SameColorYellowOrGreenShapeCircleOrTriangle[12]={131,133,141,143,231,233,241,243,331,333,341,343};
+    int SameColorBlueOrYellowShapeCircleOrTriangle[12] = {121, 123, 131, 133, 221, 223, 231, 233, 321, 323, 331, 333};
     //hard 12
-    int SameColorYellowOrGreenShapeSquareOrTriangle[12]={132,133,142,143,232,233,242,243,332,333,342,343};
+    int SameColorBlueOrYellowShapeSquareOrTriangle[12] = {122, 123, 132, 133, 222, 223, 232, 233, 322, 323, 332, 333};
     //hard 12
 
+    int SameColorBlueOrGreenShapeCircleOrSquare[12] = {121, 122, 141, 142, 221, 222, 241, 242, 321, 322, 341, 342};
+    //hard 12
+    int SameColorBlueOrGreenShapeCircleOrTriangle[12] = {121, 123, 141, 143, 221, 223, 241, 243, 321, 323, 341, 343};
+    //hard 12
+    int SameColorBlueOrGreenShapeSquareOrTriangle[12] = {122, 123, 142, 143, 222, 223, 242, 243, 322, 323, 342, 343};
+    //hard 12
+
+    int SameColorYellowOrGreenShapeCircleOrSquare[12] = {131, 132, 141, 142, 231, 232, 241, 242, 331, 332, 341, 342};
+    //hard 12
+    int SameColorYellowOrGreenShapeCircleOrTriangle[12] = {131, 133, 141, 143, 231, 233, 241, 243, 331, 333, 341, 343};
+    //hard 12
+    int SameColorYellowOrGreenShapeSquareOrTriangle[12] = {132, 133, 142, 143, 232, 233, 242, 243, 332, 333, 342, 343};
+    //hard 12
 
 
 public:
@@ -179,358 +177,473 @@ public:
     }
 
 public:
-    void PrintRuleFigureEasy(int tryb, int tura, int loss){
-        ALLEGRO_BITMAP *bmp = NULL;
-        int y = 60;
-        int x = 100;
+    const char *PrintAlgorythm(int loss, int difficulty) {
+        std::string str;
+        if (difficulty == 1) {
+            if (loss == 0) { str = "Dobierz figury koloru czerwonego."; }
+            else if (loss == 1) { str = "Dobierz figury koloru niebieskiego."; }
+            else if (loss == 2) { str = "Dobierz figury koloru żółtego."; }
+            else if (loss == 3) { str = "Dobierz figury koloru zielonego."; }
+            else if (loss == 4) { str = "Dobierz figury będące okręgami."; }
+            else if (loss == 5) { str = "Dobierz figury będące kwadratami."; }
+            else if (loss == 6) { str = "Dobierz figury będące trójkątami."; }
+        }
+        else if (difficulty == 2) {
+            if (loss == 0) { str = "Dobierz figury koloru czerwonego lub niebieskiego."; }
+            else if (loss == 1) { str = "Dobierz figury koloru czerwonego lub żółtego."; }
+            else if (loss == 2) { str = "Dobierz figury koloru czerwonego lub zielonego."; }
+            else if (loss == 3) { str = "Dobierz figury koloru niebieskiego lub żółtego."; }
+            else if (loss == 4) { str = "Dobierz figury koloru niebieskiego lub zielonego."; }
+            else if (loss == 5) { str = "Dobierz figury koloru żótego lub zielonego."; }
+            else if (loss == 6) { str = "Dobierz figury będące okręgami lub kwadratami."; }
+            else if (loss == 7) { str = "Dobierz figury będące okręgami lub trójkątami."; }
+            else if (loss == 8) { str = "Dobierz figury będące kwadratami lub trójkątami."; }
+            else if (loss == 9) { str = "Dobierz figury koloru czerwonego lub niebieskiego lub żółtego."; }
+            else if (loss == 10) { str = "Dobierz figury koloru czerwonego lub niebieskiego lub zielonego."; }
+            else if (loss == 11) { str = "Dobierz figury koloru czerwonego lub żółtego lub zielonego."; }
+            else if (loss == 12) { str = "Dobierz figury koloru niebieskiego lub żółtego lub zielonego."; }
+        }
+        else if (difficulty == 3) {
+            if (loss == 0) { str = "Dobierz figury koloru czerwonego lub niebieskiego będące okręgami lub kwadratami"; }
+            else if (loss == 1) { str = "Dobierz figury koloru czerwonego lub niebieskiego będące okręgami lub trójkątami"; }
+            else if (loss == 2) { str = "Dobierz figury koloru czerwonego lub niebieskiego będące kwadratami lub trójkątami"; }
+            else if (loss == 3) { str = "Dobierz figury koloru czerwonego lub żółtego będące okręgami lub kwadratami"; }
+            else if (loss == 4) { str = "Dobierz figury koloru czerwonego lub żółtego będące okręgami lub trójkątami"; }
+            else if (loss == 5) { str = "Dobierz figury koloru czerwonego lub żółtego będące kwadratami lub trójkątami"; }
+            else if (loss == 6) { str = "Dobierz figury koloru czerwonego lub zielonego będące okręgami lub kwadratami"; }
+            else if (loss == 7) { str = "Dobierz figury koloru czerwonego lub zielonego będące okręgami lub trójkątami"; }
+            else if (loss == 8) { str = "Dobierz figury koloru czerwonego lub zielonego będące kwadratami lub trójkątami"; }
+            else if (loss == 9) { str = "Dobierz figury koloru niebieskiego lub żółtego będące okręgami lub kwadratami"; }
+            else if (loss == 10) { str = "Dobierz figury koloru niebieskiego lub żółtego będące okręgami lub trójkątami"; }
+            else if (loss == 11) { str = "Dobierz figury koloru niebieskiego lub żółtego będące kwadratami lub trójkątami"; }
+            else if (loss == 12) { str = "Dobierz figury koloru niebieskiego lub zielonego będące okręgami lub kwadratami"; }
+            else if (loss == 13) { str = "Dobierz figury koloru niebieskiego lub zielonego będące okręgami lub trójkątami"; }
+            else if (loss == 14) { str = "Dobierz figury koloru niebieskiego lub zielonego będące kwadratami lub trójkątami"; }
+            else if (loss == 15) { str = "Dobierz figury koloru żółtego lub zielonego będące okręgami lub kwadratami"; }
+            else if (loss == 16) { str = "Dobierz figury koloru żółtego lub zielonego będące okręgami lub trójkątami"; }
+            else if (loss == 17) { str = "Dobierz figury koloru żółtego lub zielonego będące kwadratami lub trójkątami"; }
 
-        int BigSameColorSameShape = (std::rand() % 12) + 24;//easy 12
-        int MediumSameColorSameShape = (std::rand() % 12) + 12;//easy 12
-        int SmallSameColorSameShape = (std::rand() % 12);//easy 12
 
-        if (loss == 0) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, arr[BigSameColorSameShape]), x, y + tura * 50, 0);
-                al_flip_display();
-                x += 150;
-            }
         }
-        else if (loss == 1) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, arr[MediumSameColorSameShape]), x, y + tura * 50, 0);
-                al_flip_display();
-                x += 150;
-            }
-        }
-        else if (loss == 2) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, arr[SmallSameColorSameShape]), x, y + tura * 50, 0);
-                al_flip_display();
-                x += 150;
-            }
-        }
-        else if (loss == 3) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, arr[BigSameColorSameShape]), x, y + tura * 50, 0);
-                al_flip_display();
-                x += 150;
-            }
-        }
-        else if (loss == 4) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameColorRed[std::rand() % 9]), x, y + tura * 50, 0);
-                al_flip_display();
-                x += 150;
-            }
-        }
-        else if (loss == 5) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameColorBlue[std::rand() % 9]), x, y + tura * 50, 0);
-                al_flip_display();
-                x += 150;
-            }
-        }
-        else if (loss == 6) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameColorYellow[std::rand() % 9]), x, y + tura * 50, 0);
-                al_flip_display();
-                x += 150;
-            }
-        }
-        else if (loss == 7) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameColorGreen[std::rand() % 9]), x, y + tura * 50, 0);
-                al_flip_display();
-                x += 150;
-            }
-        }
-        else if (loss == 8) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameShapeCircle[std::rand() % 12]), x, y + tura * 50, 0);
-                al_flip_display();
-                x += 150;
-            }
-        }
-        else if (loss == 9) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameShapeSquare[std::rand() % 12]), x, y + tura * 50, 0);
-                al_flip_display();
-                x += 150;
-            }
-        }
-        else if (loss == 10) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameShapeTriangle[std::rand() % 12]), x, y + tura * 50, 0);
-                al_flip_display();
-                x += 150;
-            }
-        }//
-
+        const char *zasada = str.c_str();
+        return zasada;
     }
 
 public:
-    void PrintRuleFigureMedium(int tryb, int tura, int loss){
+    int LossFiguresEasy9(int easyLoss9) {
+            easyLoss9 = std::rand() % 9;
+        return easyLoss9;
+    }
+public:
+    int LossFiguresEasy12(int easyLoss12) {
+        easyLoss12 = std::rand() % 12;
+        return easyLoss12;
+    }
+
+public:
+    int  LossFigureMedium18( int mediumLoss18){
+        mediumLoss18 = std::rand() % 18;
+        return mediumLoss18;
+    }
+public:
+    int  LossFigureMedium24(int mediumLoss24){
+        mediumLoss24 = std::rand() % 24;
+        return mediumLoss24;
+    }
+public:
+    int  LossFigureMedium27(int mediumLoss27){
+        mediumLoss27 = std::rand() % 27;
+        return mediumLoss27;
+    }
+
+public:
+    int LossFigureHard(int hardLoss){
+        hardLoss = std::rand() % 17;
+        return hardLoss;
+        }
+
+
+public:
+    void PrintRuleFigureEasy(int tura, int loss, int x, int y, int easyLoss9, int easyLoss12) {
+
         ALLEGRO_BITMAP *bmp = NULL;
-        int y = 60;
-        int x = 100;
-
-        int BigSameColorSameShape = (std::rand() % 12) + 24;//easy 12
-        int MediumSameColorSameShape = (std::rand() % 12) + 12;//easy 12
-        int SmallSameColorSameShape = (std::rand() % 12);//easy 12
-
-
-        if (loss == 0) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameColorRedOrBlue[std::rand() % 18]), x, y + tura * 50, 0);
+        for (int i = 1; i < 4; i++) {
+             easyLoss9 = LossFiguresEasy9(easyLoss9);
+            easyLoss12 = LossFiguresEasy12(easyLoss12);
+            if (loss == 0) {
+                al_draw_bitmap(getFigure(bmp, SameColorRed[easyLoss9]), x, y + tura * 50, 0);
                 al_flip_display();
                 x += 150;
-            }
+                }
+        else if (loss == 1) {
+                al_draw_bitmap(getFigure(bmp, SameColorBlue[easyLoss9]), x, y + tura * 50, 0);
+                al_flip_display();
+                x += 150;
+        }
+        else if (loss == 2) {
+                al_draw_bitmap(getFigure(bmp, SameColorYellow[easyLoss9]), x, y + tura * 50, 0);
+                al_flip_display();
+                x += 150;
+        }
+        else if (loss == 3) {
+                al_draw_bitmap(getFigure(bmp, SameColorGreen[easyLoss9]), x, y + tura * 50, 0);
+                al_flip_display();
+                x += 150;
+        }
+        else if (loss == 4) {
+                al_draw_bitmap(getFigure(bmp, SameShapeCircle[easyLoss12]), x, y + tura * 50, 0);
+                al_flip_display();
+                x += 150;
+        }
+        else if (loss == 5) {
+                al_draw_bitmap(getFigure(bmp, SameShapeSquare[easyLoss12]), x, y + tura * 50, 0);
+                al_flip_display();
+                x += 150;
+        }
+        else if (loss == 6) {
+                al_draw_bitmap(getFigure(bmp, SameShapeTriangle[easyLoss12]), x, y + tura * 50, 0);
+                al_flip_display();
+                x += 150;
+        }
+        }
+    }
+
+public:
+    void PrintRuleFigureMedium(int tura, int loss, int x, int y, int mediumLoss18, int mediumLoss24,
+                               int mediumLoss27) {
+        ALLEGRO_BITMAP *bmp = NULL;
+        for (int i = 1; i < 4; i++) {
+        mediumLoss18 = LossFigureMedium18(mediumLoss18);
+        mediumLoss24 = LossFigureMedium24(mediumLoss24);
+        mediumLoss27 = LossFigureMedium27(mediumLoss27);
+        if (loss == 0) {
+                al_draw_bitmap(getFigure(bmp, SameColorRedOrBlue[mediumLoss18]), x, y + tura * 50, 0);
+                al_flip_display();
+                x += 150;
         } else if (loss == 1) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameColorRedOrYellow[std::rand() %18]), x, y + tura * 50, 0);
+                al_draw_bitmap(getFigure(bmp, SameColorRedOrYellow[mediumLoss18]), x, y + tura * 50, 0);
                 al_flip_display();
                 x += 150;
-            }
         } else if (loss == 2) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameColorRedOrGreen[std::rand() %18]), x, y + tura * 50, 0);
+                al_draw_bitmap(getFigure(bmp, SameColorRedOrGreen[mediumLoss18]), x, y + tura * 50, 0);
                 al_flip_display();
                 x += 150;
-            }
         } else if (loss == 3) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameColorBlueOrYellow[std::rand() %18]), x, y + tura * 50, 0);
+                al_draw_bitmap(getFigure(bmp, SameColorBlueOrYellow[mediumLoss18]), x, y + tura * 50, 0);
                 al_flip_display();
                 x += 150;
-            }
         } else if (loss == 4) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameColorBlueOrGreen[std::rand() %18]), x, y + tura * 50, 0);
+                al_draw_bitmap(getFigure(bmp, SameColorBlueOrGreen[mediumLoss18]), x, y + tura * 50, 0);
                 al_flip_display();
                 x += 150;
-            }
         } else if (loss == 5) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameColorYellowOrGreen[std::rand() %18]), x, y + tura * 50, 0);
+                al_draw_bitmap(getFigure(bmp, SameColorYellowOrGreen[mediumLoss18]), x, y + tura * 50, 0);
                 al_flip_display();
                 x += 150;
-            }
         } else if (loss == 6) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameShapeCircleOrSquare[std::rand() %24]), x, y + tura * 50, 0);
+                al_draw_bitmap(getFigure(bmp, SameShapeCircleOrSquare[mediumLoss24]), x, y + tura * 50, 0);
                 al_flip_display();
                 x += 150;
-            }
         } else if (loss == 7) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameShapeCircleOrTriangle[std::rand() %24]), x, y + tura * 50, 0);
+                al_draw_bitmap(getFigure(bmp, SameShapeCircleOrTriangle[mediumLoss24]), x, y + tura * 50, 0);
                 al_flip_display();
                 x += 150;
-            }
         } else if (loss == 8) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameShapeSquareOrTriangle[std::rand() %24]), x, y + tura * 50, 0);
+                al_draw_bitmap(getFigure(bmp, SameShapeSquareOrTriangle[mediumLoss24]), x, y + tura * 50, 0);
                 al_flip_display();
                 x += 150;
-            }
         } else if (loss == 9) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameColorRedOrBlueOrYellow[std::rand() %27]), x, y + tura * 50, 0);
+                al_draw_bitmap(getFigure(bmp, SameColorRedOrBlueOrYellow[mediumLoss27]), x, y + tura * 50, 0);
                 al_flip_display();
                 x += 150;
-            }
         } else if (loss == 10) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameColorRedOrBlueOrGreen[std::rand() %27]), x, y + tura * 50, 0);
+                al_draw_bitmap(getFigure(bmp, SameColorRedOrBlueOrGreen[mediumLoss27]), x, y + tura * 50, 0);
                 al_flip_display();
                 x += 150;
-            }
         } else if (loss == 11) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameColorRedOrYellowOrGreen[std::rand() %27]), x, y + tura * 50, 0);
+                al_draw_bitmap(getFigure(bmp, SameColorRedOrYellowOrGreen[mediumLoss27]), x, y + tura * 50, 0);
                 al_flip_display();
                 x += 150;
-            }
         } else if (loss == 12) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameColorBlueOrYellowOrGreen[std::rand() %27]), x, y + tura * 50, 0);
+                al_draw_bitmap(getFigure(bmp, SameColorBlueOrYellowOrGreen[mediumLoss27]), x, y + tura * 50, 0);
                 al_flip_display();
                 x += 150;
             }
         }
     }
+
 public:
-    void PrintRuleFigureHard(int tryb, int tura, int loss){
+    void PrintRuleFigureHard(int tura, int loss, int x, int y, int hardLoss) {
         ALLEGRO_BITMAP *bmp = NULL;
-        int y = 60;
-        int x = 100;
+        for (int i = 1; i < 4; i++) {
+            hardLoss = LossFigureHard(hardLoss);
+            if (loss == 0) {
 
-        int BigSameColorSameShape = (std::rand() % 12) + 24;//easy 12
-        int MediumSameColorSameShape = (std::rand() % 12) + 12;//easy 12
-        int SmallSameColorSameShape = (std::rand() % 12);//easy 12
+                al_draw_bitmap(getFigure(bmp, SameColorRedOrBlueShapeCircleOrSquare[hardLoss]), x,
+                               y + tura * 50, 0);
+                al_flip_display();
+                x += 150;
 
-        if (loss == 0) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameColorRedOrBlueShapeCircleOrSquare[std::rand() %12]), x, y + tura * 50, 0);
+            }
+            else if (loss == 1) {
+                al_draw_bitmap(getFigure(bmp, SameColorRedOrBlueShapeCircleOrTriangle[hardLoss]), x,
+                               y + tura * 50, 0);
                 al_flip_display();
                 x += 150;
             }
-        }
-        else if (loss == 1) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameColorRedOrBlueShapeCircleOrTriangle[std::rand() %12]), x, y + tura * 50, 0);
+            else if (loss == 2) {
+                al_draw_bitmap(getFigure(bmp, SameColorRedOrBlueShapeSquareOrTriangle[hardLoss]), x,
+                               y + tura * 50, 0);
                 al_flip_display();
                 x += 150;
             }
-        }
-        else if (loss == 2) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameColorRedOrBlueShapeSquareOrTriangle[std::rand() %12]), x, y + tura * 50, 0);
+            else if (loss == 3) {
+                al_draw_bitmap(getFigure(bmp, SameColorRedOrYellowShapeCircleOrSquare[hardLoss]), x,
+                               y + tura * 50, 0);
                 al_flip_display();
                 x += 150;
             }
-        }
-        else if (loss == 3) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameColorRedOrYellowShapeCircleOrSquare[std::rand() %12]), x, y + tura * 50, 0);
+            else if (loss == 4) {
+                al_draw_bitmap(getFigure(bmp, SameColorRedOrYellowShapeCircleOrTriangle[hardLoss]), x,
+                               y + tura * 50, 0);
                 al_flip_display();
                 x += 150;
             }
-        }
-        else if (loss == 4) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameColorRedOrYellowShapeCircleOrTriangle[std::rand() %12]), x, y + tura * 50, 0);
+            else if (loss == 5) {
+                al_draw_bitmap(getFigure(bmp, SameColorRedOrYellowShapeSquareOrTriangle[hardLoss]), x,
+                               y + tura * 50, 0);
                 al_flip_display();
                 x += 150;
             }
-        }
-        else if (loss == 5) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameColorRedOrYellowShapeSquareOrTriangle[std::rand() %12]), x, y + tura * 50, 0);
+            else if (loss == 6) {
+                al_draw_bitmap(getFigure(bmp, SameColorRedOrGreenShapeCircleOrSquare[hardLoss]), x,
+                               y + tura * 50, 0);
+                al_flip_display();
+                x += 150;
+
+            }
+            else if (loss == 7) {
+                al_draw_bitmap(getFigure(bmp, SameColorRedOrGreenShapeCircleOrTriangle[hardLoss]), x,
+                               y + tura * 50, 0);
                 al_flip_display();
                 x += 150;
             }
-        }
-        else if (loss == 6) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameColorRedOrGreenShapeCircleOrSquare[std::rand() %12]), x, y + tura * 50, 0);
+            else if (loss == 8) {
+                al_draw_bitmap(getFigure(bmp, SameColorRedOrGreenShapeSquareOrTriangle[hardLoss]), x,
+                               y + tura * 50, 0);
+                al_flip_display();
+                x += 150;
+
+            }
+            else if (loss == 9) {
+                al_draw_bitmap(getFigure(bmp, SameColorBlueOrYellowShapeCircleOrSquare[hardLoss]), x,
+                               y + tura * 50, 0);
+                al_flip_display();
+                x += 150;
+
+            }
+            else if (loss == 10) {
+                al_draw_bitmap(getFigure(bmp, SameColorBlueOrYellowShapeCircleOrTriangle[hardLoss]), x,
+                               y + tura * 50, 0);
                 al_flip_display();
                 x += 150;
             }
-        }
-        else if (loss == 7) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameColorRedOrGreenShapeCircleOrTriangle[std::rand() %12]), x, y + tura * 50, 0);
+            else if (loss == 11) {
+                al_draw_bitmap(getFigure(bmp, SameColorBlueOrYellowShapeSquareOrTriangle[hardLoss]), x,
+                               y + tura * 50, 0);
                 al_flip_display();
                 x += 150;
-            }
-        }
-        else if (loss == 8) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameColorRedOrGreenShapeSquareOrTriangle[std::rand() %12]), x, y + tura * 50, 0);
+
+            } else if (loss == 12) {
+                al_draw_bitmap(getFigure(bmp, SameColorBlueOrGreenShapeCircleOrSquare[hardLoss]), x,
+                               y + tura * 50, 0);
                 al_flip_display();
                 x += 150;
-            }
-        }
-        else if (loss == 9) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameColorBlueOrYellowShapeCircleOrSquare[std::rand() %12]), x, y + tura * 50, 0);
+            } else if (loss == 13) {
+                al_draw_bitmap(getFigure(bmp, SameColorBlueOrGreenShapeCircleOrTriangle[hardLoss]), x,
+                               y + tura * 50, 0);
                 al_flip_display();
                 x += 150;
-            }
-        }
-        else if (loss == 10) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameColorBlueOrYellowShapeCircleOrTriangle[std::rand() %12]), x, y + tura * 50, 0);
+            } else if (loss == 14) {
+                al_draw_bitmap(getFigure(bmp, SameColorBlueOrGreenShapeSquareOrTriangle[hardLoss]), x,
+                               y + tura * 50, 0);
                 al_flip_display();
                 x += 150;
-            }
-        }//
-        else if (loss == 11) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameColorBlueOrYellowShapeSquareOrTriangle[std::rand() %12]), x, y + tura * 50, 0);
+            } else if (loss == 15) {
+                al_draw_bitmap(getFigure(bmp, SameColorYellowOrGreenShapeCircleOrSquare[hardLoss]), x,
+                               y + tura * 50, 0);
                 al_flip_display();
                 x += 150;
-            }
-        } else if (loss == 12) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameColorBlueOrGreenShapeCircleOrSquare[std::rand() %12]), x, y + tura * 50, 0);
+            } else if (loss == 16) {
+                al_draw_bitmap(getFigure(bmp, SameColorYellowOrGreenShapeCircleOrTriangle[hardLoss]), x,
+                               y + tura * 50, 0);
                 al_flip_display();
                 x += 150;
-            }
-        } else if (loss == 13) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameColorBlueOrGreenShapeCircleOrTriangle[std::rand() %12]), x, y + tura * 50, 0);
-                al_flip_display();
-                x += 150;
-            }
-        } else if (loss == 14) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameColorBlueOrGreenShapeSquareOrTriangle[std::rand() %12]), x, y + tura * 50, 0);
-                al_flip_display();
-                x += 150;
-            }
-        } else if (loss == 15) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameColorYellowOrGreenShapeCircleOrSquare[std::rand() %12]), x, y + tura * 50, 0);
-                al_flip_display();
-                x += 150;
-            }
-        } else if (loss == 16) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameColorYellowOrGreenShapeCircleOrTriangle[std::rand() %12]), x, y + tura * 50, 0);
-                al_flip_display();
-                x += 150;
-            }
-        } else if (loss == 17) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameColorYellowOrGreenShapeSquareOrTriangle[std::rand() %12]), x, y + tura * 50, 0);
-                al_flip_display();
-                x += 150;
-            }
-        } else if (loss == 18) {
-            for (int i = 1; i < 4; i++) {
-                al_draw_bitmap(getFigure(bmp, SameShapeCircleOrTriangle[std::rand() %24]), x, y + tura * 50, 0);
+            } else if (loss == 17) {
+                al_draw_bitmap(getFigure(bmp, SameColorYellowOrGreenShapeSquareOrTriangle[hardLoss]), x,
+                               y + tura * 50, 0);
                 al_flip_display();
                 x += 150;
             }
         }
     }
 
-
-
 public:
-    void GetFirstThree(int tryb,  int tura, int difficulty) {
+    int GetFirstThree(int tura, int difficulty, int loss, int easyLoss9, int easyLoss12,
+                      int mediumLoss18, int mediumLoss24, int mediumLoss27,
+                      int hardLoss) {
 
         ALLEGRO_FONT *font16 = al_load_ttf_font("/home/oogway/ClionProjects/LogicKing/ubuntu-font-family/Ubuntu-B.ttf",
                                                 16, 0);
+        if (difficulty == 1) {
+            PrintRuleFigureEasy(tura, loss, x, y, easyLoss9, easyLoss12);
+        }
+        else if (difficulty == 2) {
 
-        if(difficulty == 1) {
-            int loss = rand() %7 ;
-            for (int i = 1; i < 4; i++) {
-                PrintRuleFigureEasy(tryb, tura, loss);
-                tura+=1;
-            }
+            PrintRuleFigureMedium(tura, loss, x, y, mediumLoss18, mediumLoss24, mediumLoss27);
         }
-        else if(difficulty ==2){
-            int loss = rand() %14;
-            for (int i = 1; i < 4; i++) {
-                PrintRuleFigureMedium(tryb, tura, loss);
-                tura+=1;
-            }
+        else if (difficulty == 3) {
+
+            PrintRuleFigureHard(tura, loss, x, y, hardLoss);
         }
-        else if(difficulty ==3){
-            int loss = rand()%18;
-            for (int i = 1; i < 4; i++) {
-                PrintRuleFigureHard(tryb, tura, loss);
-                tura+=1;
-            }
-        }
+        return loss, easyLoss9, easyLoss12, mediumLoss18, mediumLoss24, mediumLoss27, hardLoss;
     }
 
 public:
-    void ShowOptions(){
+    void PrintChosen(ALLEGRO_BITMAP *tempbmp,int tura) {
+
+        al_draw_bitmap(tempbmp,x,y+tura*50,0);
+        al_flip_display();
     }
+
+public:
+    int ShowOptions(int difficulty, int loss, int lossRightOnePos, int falseLoss1, int falseLoss2,
+                    int falseLoss3, int easyLoss9, int easyLoss12,
+                    int mediumLoss18, int mediumLoss24, int mediumLoss27,
+                    int hardLoss, int& tempx, int& tempy) {
+        int x1 = 60;
+        int y1 = 550;
+        int x2 = 450;
+        int y2 = 600;
+
+        ALLEGRO_FONT *font16 = al_load_ttf_font("/home/oogway/ClionProjects/LogicKing/ubuntu-font-family/Ubuntu-B.ttf",
+                                                16, 0);
+        al_draw_text(font16, al_map_rgb(150, 105, 150), x1 - 20, y1, NULL, "1.");
+        al_draw_text(font16, al_map_rgb(150, 105, 150), x1 - 20, y2, NULL, "2.");
+        al_draw_text(font16, al_map_rgb(150, 105, 150), x2 - 20, y1, NULL, "3.");
+        al_draw_text(font16, al_map_rgb(150, 105, 150), x2 - 20, y2, NULL, "4.");
+        int tur = 0;
+        if (difficulty == 1) {
+            if (lossRightOnePos == 1) {
+                PrintRuleFigureEasy(tur, loss, x1, y1, easyLoss9, easyLoss12);
+                PrintRuleFigureEasy(tur, falseLoss1, x1, y2, easyLoss9, easyLoss12);
+                PrintRuleFigureEasy(tur, falseLoss2, x2, y1, easyLoss9, easyLoss12);
+                PrintRuleFigureEasy(tur, falseLoss3, x2, y2, easyLoss9, easyLoss12);
+                tempx = x1;
+                tempy = y1;
+            }
+            else if (lossRightOnePos == 2) {
+
+                PrintRuleFigureEasy(tur, loss, x1, y2, easyLoss9, easyLoss12);
+                PrintRuleFigureEasy(tur, falseLoss1, x1, y1, easyLoss9, easyLoss12);
+                PrintRuleFigureEasy(tur, falseLoss2, x2, y1, easyLoss9, easyLoss12);
+                PrintRuleFigureEasy(tur, falseLoss3, x2, y2, easyLoss9, easyLoss12);
+                tempx = x1;
+                tempy = y2;
+            }
+            else if (lossRightOnePos == 3) {
+
+                PrintRuleFigureEasy(tur, loss, x2, y1, easyLoss9, easyLoss12);
+                PrintRuleFigureEasy(tur, falseLoss1, x1, y1, easyLoss9, easyLoss12);
+                PrintRuleFigureEasy(tur, falseLoss2, x1, y2, easyLoss9, easyLoss12);
+                PrintRuleFigureEasy(tur, falseLoss3, x2, y2, easyLoss9, easyLoss12);
+                tempx = x2;
+                tempy = y1;
+            }
+            else if (lossRightOnePos == 4) {
+
+                PrintRuleFigureEasy(tur, loss, x2, y2, easyLoss9, easyLoss12);
+                PrintRuleFigureEasy(tur, falseLoss1, x1, y1, easyLoss9, easyLoss12);
+                PrintRuleFigureEasy(tur, falseLoss2, x1, y2, easyLoss9, easyLoss12);
+                PrintRuleFigureEasy(tur, falseLoss3, x2, y1, easyLoss9, easyLoss12);
+                tempx = x2;
+                tempy = y2;
+            }
+        }
+        else if (difficulty == 2) {
+            if (lossRightOnePos == 1) {
+                PrintRuleFigureMedium(tur, loss, x1, y1, mediumLoss18, mediumLoss24, mediumLoss27);
+                PrintRuleFigureMedium(tur, falseLoss1, x1, y2, mediumLoss18, mediumLoss24, mediumLoss27);
+                PrintRuleFigureMedium(tur, falseLoss2, x2, y1, mediumLoss18, mediumLoss24, mediumLoss27);
+                PrintRuleFigureMedium(tur, falseLoss3, x2, y2, mediumLoss18, mediumLoss24, mediumLoss27);
+                tempx = x1;
+                tempy = y1;
+            }
+            else if (lossRightOnePos == 2) {
+                PrintRuleFigureMedium(tur, loss, x1, y2, mediumLoss18, mediumLoss24, mediumLoss27);
+                PrintRuleFigureMedium(tur, falseLoss1, x1, y1, mediumLoss18, mediumLoss24, mediumLoss27);
+                PrintRuleFigureMedium(tur, falseLoss2, x2, y1, mediumLoss18, mediumLoss24, mediumLoss27);
+                PrintRuleFigureMedium(tur, falseLoss3, x2, y2, mediumLoss18, mediumLoss24, mediumLoss27);
+                tempx = x1;
+                tempy = y2;
+            }
+            else if (lossRightOnePos == 3) {
+                PrintRuleFigureMedium(tur, loss, x2, y1, mediumLoss18, mediumLoss24, mediumLoss27);
+                PrintRuleFigureMedium(tur, falseLoss1, x1, y1, mediumLoss18, mediumLoss24, mediumLoss27);
+                PrintRuleFigureMedium(tur, falseLoss2, x1, y2, mediumLoss18, mediumLoss24, mediumLoss27);
+                PrintRuleFigureMedium(tur, falseLoss3, x2, y2, mediumLoss18, mediumLoss24, mediumLoss27);
+                tempx = x2;
+                tempy = y1;
+            }
+            else if (lossRightOnePos == 4) {
+                PrintRuleFigureMedium(tur, loss, x2, y2, mediumLoss18, mediumLoss24, mediumLoss27);
+                PrintRuleFigureMedium(tur, falseLoss1, x1, y1, mediumLoss18, mediumLoss24, mediumLoss27);
+                PrintRuleFigureMedium(tur, falseLoss2, x1, y2, mediumLoss18, mediumLoss24, mediumLoss27);
+                PrintRuleFigureMedium(tur, falseLoss3, x2, y1, mediumLoss18, mediumLoss24, mediumLoss27);
+                tempx = x2;
+                tempy = y2;
+            }
+        }
+        else if (difficulty == 3) {
+            if (lossRightOnePos == 1) {
+                PrintRuleFigureHard(tur, loss, x1, y1, hardLoss);
+                PrintRuleFigureHard(tur, falseLoss1, x1, y2, hardLoss);
+                PrintRuleFigureHard(tur, falseLoss2, x2, y1, hardLoss);
+                PrintRuleFigureHard(tur, falseLoss3, x2, y2, hardLoss);
+                tempx = x1;
+                tempy = y1;
+            }
+            else if (lossRightOnePos == 2) {
+                PrintRuleFigureHard(tur, loss, x1, y2, hardLoss);
+                PrintRuleFigureHard(tur, falseLoss1, x1, y1, hardLoss);
+                PrintRuleFigureHard(tur, falseLoss2, x2, y1, hardLoss);
+                PrintRuleFigureHard(tur, falseLoss3, x2, y2, hardLoss);
+                tempx = x1;
+                tempy = y2;
+            }
+            else if (lossRightOnePos == 3) {
+                PrintRuleFigureHard(tur, loss, x2, y1, hardLoss);
+                PrintRuleFigureHard(tur, falseLoss1, x1, y1, hardLoss);
+                PrintRuleFigureHard(tur, falseLoss2, x1, y2, hardLoss);
+                PrintRuleFigureHard(tur, falseLoss3, x2, y2, hardLoss);
+                tempx = x2;
+                tempy = y1;
+            }
+            else if (lossRightOnePos == 4) {
+                PrintRuleFigureHard(tur, loss, x2, y2, hardLoss);
+                PrintRuleFigureHard(tur, falseLoss1, x1, y1, hardLoss);
+                PrintRuleFigureHard(tur, falseLoss2, x1, y2, hardLoss);
+                PrintRuleFigureHard(tur, falseLoss3, x2, y1, hardLoss);
+                tempx = x2;
+                tempy = y2;
+            }
+        }
+        return  difficulty,  loss,  lossRightOnePos,  falseLoss1,  falseLoss2,
+                falseLoss3,  easyLoss9,  easyLoss12,
+                mediumLoss18,  mediumLoss24,  mediumLoss27,
+                hardLoss,  tempx,  tempy;
+    }
+
 
 
     static struct LoadBitMaps {
@@ -614,9 +727,7 @@ public:
         ALLEGRO_BITMAP *BigGreenTriangle = al_load_bitmap(
                 "/home/oogway/ClionProjects/LogicKing/Figures/Triangle/Big_Green_Triangle.png");
     } figura;
-
 };
-
 
 #endif //LOGICKING_METODY_H
 
